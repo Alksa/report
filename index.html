@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection" />
+    <title>报告防伪查询</title>
+    <link href="pages/css/sm.min.css" rel="stylesheet">
+    <link href="pages/css/report.css" rel="stylesheet">
+    <script src="pages/js/jquery-1.8.2.min.js"></script>
+    <script src="pages/js/common.js"></script>
+    <script src="pages/layer/layer.js"></script>
+</head>
+<style type="text/css">
+    .doctorName {
+        font-size: .8rem;
+        margin-left: .6rem;
+        margin-top: 8px;
+        display: inline-block;
+        color:#999;
+    }
+    .backRight {
+        font-size: .7rem;
+        position: absolute;
+        right: .6rem;
+        top: 6px;
+        color:#999;
+    }
+    .backRight img {
+        position: absolute;
+        right: 1.6rem;
+    }
+    .btn-serach{
+        width: 95% !important;
+    }
+
+</style>
+<body>
+<section class="page page-current" id="blank">
+    <div class="content">
+        <div class="info-block">
+            <div class="info-icon">
+                <div class="info-text">
+                    <h5 class="text-title" style="width: 100%;margin: 4rem auto 0 auto;color:#999;text-align: center">正在加载中，请稍候..............</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--个人报告查询-->
+<section class="page page-current" id="reportQuery" style="display: none;">
+    <div class="content">
+        <div class="reportContent" v-for="item in list">
+            <table style="margin-bottom: .4rem; font-size: .90rem;border-collapse:separate; border-spacing:0px 10px;">
+                <tr>
+                    <td style="color: #23ced1; width: 30%;"> 姓 &nbsp;&nbsp; 名： </td>
+                    <td style="word-wrap:break-word;word-break:break-all; width: 70%;"><label id="patientName"></label></td>
+                </tr>
+                <tr>
+                    <td style="color: #23ced1;">检测单位：</td>
+                    <td style="word-wrap:break-word;word-break:break-all; width: 70%;"><label id="laboratoryName"></label></td>
+                </tr>
+                <tr>
+                    <td style="color: #23ced1;">检测项目：</td>
+                    <td style="word-wrap:break-word;word-break:break-all; width: 70%;"><label id="testName"></label></td>
+                </tr>
+            </table>
+            <button class="btn btn-serach" onclick="getReport()" id="getReport"
+                    style="background: #1E9FFF;border-width:0px;color: white; display: none">查看报告
+            </button>
+            <input type="hidden" id="reportId">
+        </div>
+    </div>
+</section>
+
+
+
+</body>
+
+</html>
